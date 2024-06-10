@@ -1,10 +1,14 @@
 package ru.kashigin.SpringMVCTask.model;
 
 
+import javax.persistence.*;
 
-
-
+@Entity
+@Table(name = "pharmacy")
 public class Pharmacy {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     //объявление полей
     private Long id;
     private String name;

@@ -1,4 +1,4 @@
-
+/*
 package ru.kashigin.SpringMVCTask.repository;
 
 import org.springframework.stereotype.Repository;
@@ -29,3 +29,4 @@ public class InMemoryPharmacyRepository {
         pharmacies.removeIf(pharmacy -> pharmacy.getId().equals(id));
     }
 }
+*/

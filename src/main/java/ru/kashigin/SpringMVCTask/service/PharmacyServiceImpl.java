@@ -3,16 +3,15 @@ package ru.kashigin.SpringMVCTask.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.kashigin.SpringMVCTask.model.Pharmacy;
-import ru.kashigin.SpringMVCTask.repository.InMemoryPharmacyRepository;
+import ru.kashigin.SpringMVCTask.repository.PharmacyRepository;
 
 import java.util.List;
 
 @Service
 public class PharmacyServiceImpl implements PharmacyService{
-    private final InMemoryPharmacyRepository repository;
+    private final PharmacyRepository repository;
 
-    @Autowired
-    public PharmacyServiceImpl(InMemoryPharmacyRepository repository) {
+    public PharmacyServiceImpl(PharmacyRepository repository) {
         this.repository = repository;
     }
 

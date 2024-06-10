@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pharmacies</title>
+</head>
+<body>
+<h1>Pharmacies</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="pharmacy : ${pharmacies}">
+        <td th:text="${pharmacy.name}">Name</td>
+        <td th:text="${pharmacy.address}">Address</td>
+    </tr>
+    </tbody>
+</table>
+<a href= "/Spring-MVC-Task/view/pharmacies/add" /> Add new pharmacy</a>
+</body>
+</html>

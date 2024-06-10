@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64720a6d-0ec9-4321-8203-8ac550034a07" name="Changes" comment="without db">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/repository/PharmacyRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="64720a6d-0ec9-4321-8203-8ac550034a07" name="Changes" comment="not worked">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/model/Pharmacy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/model/Pharmacy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/repository/InMemoryPharmacyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/repository/InMemoryPharmacyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/service/PharmacyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/service/PharmacyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,29 +47,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Spring-MVC-Task [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Spring-MVC-Task [org.apache.maven.plugins:maven-install-plugin:2.5.2:install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Spring-MVC-Task [org.apache.maven.plugins:maven-install-plugin:3.1.1:install].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Smart Tomcat.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.Spring-MVC-Task [clean].executor": "Run",
+    "Maven.Spring-MVC-Task [install].executor": "Run",
+    "Maven.Spring-MVC-Task [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
+    "Maven.Spring-MVC-Task [org.apache.maven.plugins:maven-install-plugin:2.5.2:install].executor": "Run",
+    "Maven.Spring-MVC-Task [org.apache.maven.plugins:maven-install-plugin:3.1.1:install].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Smart Tomcat.Unnamed.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;Properties&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Properties"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ru.kashigin.SpringMVCTask.model" />
@@ -146,11 +145,20 @@
       <option name="project" value="LOCAL" />
       <updated>1718025249349</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="not worked">
+      <option name="closed" value="true" />
+      <created>1718048495147</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718048495148</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="without db" />
-    <option name="LAST_COMMIT_MESSAGE" value="without db" />
+    <MESSAGE value="not worked" />
+    <option name="LAST_COMMIT_MESSAGE" value="not worked" />
   </component>
 </project>

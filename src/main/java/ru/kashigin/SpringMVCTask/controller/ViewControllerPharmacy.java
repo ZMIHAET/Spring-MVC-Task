@@ -1,7 +1,6 @@
 package ru.kashigin.SpringMVCTask.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -9,11 +8,11 @@ import ru.kashigin.SpringMVCTask.model.Pharmacy;
 import ru.kashigin.SpringMVCTask.service.PharmacyService;
 
 @Controller
-public class ViewController {
+public class ViewControllerPharmacy {
     private final PharmacyService pharmacyService;
 
     @Autowired
-    public ViewController(PharmacyService pharmacyService){
+    public ViewControllerPharmacy(PharmacyService pharmacyService){
         this.pharmacyService = pharmacyService;
     }
 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Customer</title>
+</head>
+<body>
+<h1>Add New Customer</h1>
+<form action="#" th:action="@{/view/customers/add}" th:object="${customer}" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" />
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email" th:field="*{email}" />
+    </div>
+    <div>
+        <input type="submit" value="Add customer"/>
+    </div>
+</form>
+<a href="/view/customers">Back to list</a>
+</body>
+</html>

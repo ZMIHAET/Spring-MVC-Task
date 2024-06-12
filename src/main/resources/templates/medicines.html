@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Medicines</title>
+</head>
+<body>
+<h1>Medicines</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="medicine : ${medicines}">
+        <td><a th:href="@{/view/medicines/{id}(id=${medicine.id})}" th:text="${medicine.name}">Name</a></td>
+        <td th:text="${medicine.price}">Price</td>
+        <td th:text="${medicine.stock}">Stock</td>
+    </tr>
+    </tbody>
+</table>
+<br/>
+<hr/>
+<a href= "/view/medicines/add" />Add new medicine</a>
+<hr/>
+<a href="/">Back to Welcome Page</a>
+</body>
+</html>

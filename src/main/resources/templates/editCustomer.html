@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Customer</title>
+</head>
+<body>
+<h1>Edit Customer</h1>
+<form th:action="@{/view/customers/edit/{id}(id=${customer.id})}" th:object="${customer}" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" />
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email" th:field="*{email}" />
+    </div>
+    <div>
+        <button type="Submit">Save</button>
+    </div>
+</form>
+<a href="/view/customers">Cancel</a>
+</body>
+</html>

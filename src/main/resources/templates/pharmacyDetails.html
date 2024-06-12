@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pharmacy Details</title>
+</head>
+<body>
+<h1>Pharmacy Details</h1>
+<p><strong>Name:</strong> <span th:text="${pharmacy.name}">Name</span></p>
+<p><strong>Address:</strong> <span th:text="${pharmacy.address}">Address</span></p>
+<p><a th:href="@{/view/pharmacies/edit/{id}(id=${pharmacy.id})}">Edit</a></p>
+<p>
+<form th:action="@{/view/pharmacies/{id}(id=${pharmacy.id})}" method="post">
+    <input type="hidden" name="_method" value="delete" />
+    <input type="submit" value="Delete"/>
+</form>
+</p>
+
+
+<a href="/view/pharmacies">Back to list</a>
+</body>
+</html>

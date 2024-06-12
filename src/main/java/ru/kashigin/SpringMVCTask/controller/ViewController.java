@@ -23,14 +23,6 @@ public class ViewController {
         return "pharmacies";
     }
 
-
-/*    @GetMapping("/view/pharmacies/{id}")
-    public String viewPharmacy(@PathVariable("id") int id, Model model){
-        model.addAttribute("pharmacies", pharmacyService.getPharmacyById((long) id));
-        return "showPharmacy";
-    }*/
-
-
     @GetMapping("/view/pharmacies/add")
     public String addPharmacyForm(Model model) {
         model.addAttribute("pharmacy", new Pharmacy());
@@ -40,6 +32,42 @@ public class ViewController {
     @PostMapping("/view/pharmacies/add")
     public String addPharmacySubmit(@ModelAttribute Pharmacy pharmacy, Model model) {
         pharmacyService.createPharmacy(pharmacy);
+        return "redirect:/view/pharmacies";
+    }
+
+    @GetMapping("/view/pharmacies/{id}")
+    public String viewPharmacy(@PathVariable("id") Long id, Model model){
+        Pharmacy pharmacy = pharmacyService.getPharmacyById(id);
+        if (pharmacy == null)
+            throw new RuntimeException("Pharmacy not found");
+        model.addAttribute("pharmacy", pharmacy);
+        return "pharmacyDetails";
+    }
+
+    @GetMapping("/view/pharmacies/edit/{id}")
+    public String editPharmacyForm(@PathVariable("id") Long id, Model model){
+        Pharmacy pharmacy = pharmacyService.getPharmacyById(id);
+        if (pharmacy == null)
+            throw new RuntimeException("Pharmacy not found");
+        model.addAttribute("pharmacy", pharmacy);
+        return "editPharmacy";
+    }
+
+    @PostMapping("/view/pharmacies/edit/{id}")
+    public String editPharmacySubmit(@PathVariable("id") Long id, @ModelAttribute Pharmacy pharmacy){
+        Pharmacy existingPharmacy = pharmacyService.getPharmacyById(id);
+        if (existingPharmacy == null)
+            throw new RuntimeException("Pharmacy not found");
+        existingPharmacy.setName(pharmacy.getName());
+        existingPharmacy.setAddress(pharmacy.getAddress());
+        pharmacyService.updatePharmacy(id, existingPharmacy);
+        return "redirect:/view/pharmacies";
+    }
+
+    @PostMapping("/view/pharmacies/{id}")
+    public String deletePharmacy(@PathVariable("id") Long id, @RequestParam("_method") String method){
+        if("delete".equalsIgnoreCase(method))
+            pharmacyService.deletePharmacy(id);
         return "redirect:/view/pharmacies";
     }
 }

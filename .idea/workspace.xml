@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64720a6d-0ec9-4321-8203-8ac550034a07" name="Changes" comment="not worked">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="64720a6d-0ec9-4321-8203-8ac550034a07" name="Changes" comment="base version">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/editPharmacy.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/pharmacyDetails.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/controller/ViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/model/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/model/Medicine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContextMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContextMVC.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addPharmacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addPharmacy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/pharmacies.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pharmacies.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addPharmacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addPharmacy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pharmacies.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pharmacies.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +161,7 @@
       <updated>1714918983814</updated>
       <workItem from="1718118436146" duration="3357000" />
       <workItem from="1718127575327" duration="731000" />
+      <workItem from="1718196373261" duration="6277000" />
     </task>
     <task id="LOCAL-00001" summary="without db">
       <option name="closed" value="true" />
@@ -182,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718048495148</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="base version">
+      <option name="closed" value="true" />
+      <created>1718196428833</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718196428833</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +196,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="without db" />
     <MESSAGE value="not worked" />
-    <option name="LAST_COMMIT_MESSAGE" value="not worked" />
+    <MESSAGE value="base version" />
+    <option name="LAST_COMMIT_MESSAGE" value="base version" />
   </component>
 </project>

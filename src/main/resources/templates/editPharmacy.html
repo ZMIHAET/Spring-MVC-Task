@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Add Pharmacy</title>
+    <title>Edit Pharmacy</title>
 </head>
 <body>
-<h1>Add New Pharmacy</h1>
-<form action="#" th:action="@{/view/pharmacies/add}" th:object="${pharmacy}" method="post">
+<h1>Edit Pharmacy</h1>
+<form th:action="@{/view/pharmacies/edit/{id}(id=${pharmacy.id})}" th:object="${pharmacy}" method="post">
     <div>
         <label for="name">Name:</label>
         <input type="text" id="name" th:field="*{name}" />
@@ -15,9 +15,9 @@
         <input type="text" id="address" th:field="*{address}" />
     </div>
     <div>
-        <input type="submit" value="Add pharmacy"/>
+        <button type="Submit">Save</button>
     </div>
 </form>
-<a href="/view/pharmacies">Back to list</a>
+<a href="/view/pharmacies">Cancel</a>
 </body>
 </html>

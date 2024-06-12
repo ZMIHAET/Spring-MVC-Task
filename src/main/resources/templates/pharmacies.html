@@ -14,11 +14,13 @@
     </thead>
     <tbody>
     <tr th:each="pharmacy : ${pharmacies}">
-        <td th:text="${pharmacy.name}">Name</td>
+        <td><a th:href="@{/view/pharmacies/{id}(id=${pharmacy.id})}" th:text="${pharmacy.name}">Name</a></td>
         <td th:text="${pharmacy.address}">Address</td>
     </tr>
     </tbody>
 </table>
+<br/>
+<hr/>
 <a href= "/view/pharmacies/add" />Add new pharmacy</a>
 </body>
 </html>

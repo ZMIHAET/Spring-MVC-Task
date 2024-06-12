@@ -23,6 +23,14 @@ public class ViewController {
         return "pharmacies";
     }
 
+
+/*    @GetMapping("/view/pharmacies/{id}")
+    public String viewPharmacy(@PathVariable("id") int id, Model model){
+        model.addAttribute("pharmacies", pharmacyService.getPharmacyById((long) id));
+        return "showPharmacy";
+    }*/
+
+
     @GetMapping("/view/pharmacies/add")
     public String addPharmacyForm(Model model) {
         model.addAttribute("pharmacy", new Pharmacy());

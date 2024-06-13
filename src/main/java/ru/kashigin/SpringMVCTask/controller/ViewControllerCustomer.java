@@ -21,18 +21,18 @@ public class ViewControllerCustomer {
     @GetMapping("/view/customers")
     public String viewCustomers(Model model){
         model.addAttribute("customers", customerService.getAllCustomers());
-        return "customers";
+        return "/custom/customers";
     }
     @GetMapping("/view/customers/add")
     public String addCustomerForm(Model model){
         model.addAttribute("customer", new Customer());
-        return "addCustomer";
+        return "/custom/addCustomer";
     }
     @PostMapping("/view/customers/add")
     public String addCustomerSubmit(@ModelAttribute @Valid Customer customer, BindingResult bindingResult,
                                     Model model){
         if (bindingResult.hasErrors())
-            return "addCustomer";
+            return "/custom/addCustomer";
         customerService.createCustomer(customer);
         return "redirect:/view/customers";
     }
@@ -43,7 +43,7 @@ public class ViewControllerCustomer {
         if (customer == null)
             throw new RuntimeException("Customer not found");
         model.addAttribute("customer", customer);
-        return "customerDetails";
+        return "/custom/customerDetails";
     }
 
     @GetMapping("/view/customers/edit/{id}")
@@ -52,14 +52,14 @@ public class ViewControllerCustomer {
         if (customer == null)
             throw new RuntimeException("Customer not found");
         model.addAttribute("customer", customer);
-        return "editCustomer";
+        return "/custom/editCustomer";
     }
 
     @PostMapping("/view/customers/edit/{id}")
     public String editCustomerSubmit(@PathVariable("id") Long id, @ModelAttribute @Valid Customer customer,
                                      BindingResult bindingResult){
         if (bindingResult.hasErrors())
-            return "editCustomer";
+            return "/custom/editCustomer";
         Customer existingCustomer = customerService.getCustomerById(id);
         if (customer == null)
             throw new RuntimeException("Customer not found");

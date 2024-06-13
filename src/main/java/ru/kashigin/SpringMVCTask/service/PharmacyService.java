@@ -1,6 +1,7 @@
 package ru.kashigin.SpringMVCTask.service;
 
 import org.springframework.stereotype.Service;
+import ru.kashigin.SpringMVCTask.dto.PharmacyDTO;
 import ru.kashigin.SpringMVCTask.model.Pharmacy;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package ru.kashigin.SpringMVCTask.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.kashigin.SpringMVCTask.dto.PharmacyDTO;
 import ru.kashigin.SpringMVCTask.model.Pharmacy;
 import ru.kashigin.SpringMVCTask.repository.PharmacyRepository;
 

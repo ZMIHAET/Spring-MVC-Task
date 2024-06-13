@@ -21,20 +21,20 @@ public class ViewControllerMedicine {
     @GetMapping("/view/medicines")
     public String viewMedicines(Model model){
         model.addAttribute("medicines", medicineService.getAllMedicines());
-        return "medicines";
+        return "/medici/medicines";
     }
 
     @GetMapping("/view/medicines/add")
     public String addMedicineForm(Model model){
         model.addAttribute("medicine", new Medicine());
-        return "addMedicine";
+        return "/medici/addMedicine";
     }
 
     @PostMapping("/view/medicines/add")
     public String addMedicineSubmit(@ModelAttribute @Valid Medicine medicine, BindingResult bindingResult,
                                     Model model){
         if (bindingResult.hasErrors())
-            return "addMedicine";
+            return "/medici/addMedicine";
         medicineService.createMedicine(medicine);
         return "redirect:/view/medicines";
     }
@@ -45,7 +45,7 @@ public class ViewControllerMedicine {
         if (medicine == null)
             throw new RuntimeException("Medicine not found");
         model.addAttribute("medicine", medicine);
-        return "medicineDetails";
+        return "/medici/medicineDetails";
     }
 
     @GetMapping("/view/medicines/edit/{id}")
@@ -54,7 +54,7 @@ public class ViewControllerMedicine {
         if (medicine == null)
             throw new RuntimeException("Medicine not found");
         model.addAttribute("medicine", medicine);
-        return "editMedicine";
+        return "/medici/editMedicine";
     }
 
     @PostMapping ("/view/medicines/edit/{id}")
@@ -62,7 +62,7 @@ public class ViewControllerMedicine {
                                      @ModelAttribute @Valid Medicine medicine,
                                      BindingResult bindingResult){
         if (bindingResult.hasErrors())
-            return "editMedicine";
+            return "/medici/editMedicine";
         Medicine existingMedicine = medicineService.getMedicineById(id);
         if (medicine == null)
             throw new RuntimeException("Medicine not found");

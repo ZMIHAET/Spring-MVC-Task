@@ -21,20 +21,20 @@ public class ViewControllerPharmacy {
     @GetMapping("/view/pharmacies")
     public String viewPharmacies(Model model){
         model.addAttribute("pharmacies", pharmacyService.getAllPharmacies());
-        return "pharmacies";
+        return "/pharma/pharmacies";
     }
 
     @GetMapping("/view/pharmacies/add")
     public String addPharmacyForm(Model model) {
         model.addAttribute("pharmacy", new Pharmacy());
-        return "addPharmacy";
+        return "/pharma/addPharmacy";
     }
 
     @PostMapping("/view/pharmacies/add")
     public String addPharmacySubmit(@ModelAttribute @Valid Pharmacy pharmacy, BindingResult bindingResult,
                                     Model model) {
         if (bindingResult.hasErrors())
-            return "addPharmacy";
+            return "/pharma/addPharmacy";
         pharmacyService.createPharmacy(pharmacy);
         return "redirect:/view/pharmacies";
     }
@@ -45,7 +45,7 @@ public class ViewControllerPharmacy {
         if (pharmacy == null)
             throw new RuntimeException("Pharmacy not found");
         model.addAttribute("pharmacy", pharmacy);
-        return "pharmacyDetails";
+        return "/pharma/pharmacyDetails";
     }
 
     @GetMapping("/view/pharmacies/edit/{id}")
@@ -54,7 +54,7 @@ public class ViewControllerPharmacy {
         if (pharmacy == null)
             throw new RuntimeException("Pharmacy not found");
         model.addAttribute("pharmacy", pharmacy);
-        return "editPharmacy";
+        return "/pharma/editPharmacy";
     }
 
     @PostMapping("/view/pharmacies/edit/{id}")
@@ -62,7 +62,7 @@ public class ViewControllerPharmacy {
                                      @ModelAttribute @Valid Pharmacy pharmacy,
                                      BindingResult bindingResult){
         if (bindingResult.hasErrors())
-            return "editPharmacy";
+            return "/pharma/editPharmacy";
         Pharmacy existingPharmacy = pharmacyService.getPharmacyById(id);
         if (existingPharmacy == null)
             throw new RuntimeException("Pharmacy not found");

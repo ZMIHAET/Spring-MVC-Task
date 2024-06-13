@@ -4,32 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64720a6d-0ec9-4321-8203-8ac550034a07" name="Changes" comment="full working pharmacy">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/controller/MedicineController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/controller/ViewControllerCustomer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/controller/ViewControllerMedicine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/repository/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/repository/MedicineRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/service/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/service/CustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/service/MedicineService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/service/MedicineServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/addCustomer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/addMedicine.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/customerDetails.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/customers.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/editCustomer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/editMedicine.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/medicineDetails.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/medicines.html" afterDir="false" />
+    <list default="true" id="64720a6d-0ec9-4321-8203-8ac550034a07" name="Changes" comment="minimum request">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/controller/ViewControllerPharmacy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/repository/InMemoryPharmacyRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/repository/PharmacyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/repository/PharmacyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pharmacies.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pharmacies.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/controller/ViewControllerCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/controller/ViewControllerCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/controller/ViewControllerMedicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/controller/ViewControllerMedicine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/controller/ViewControllerPharmacy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/controller/ViewControllerPharmacy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/model/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/model/Medicine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/model/Pharmacy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/model/Pharmacy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addCustomer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addCustomer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addMedicine.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addMedicine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addPharmacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addPharmacy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editCustomer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editCustomer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editMedicine.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editMedicine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editPharmacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editPharmacy.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +170,9 @@
       <updated>1714918983814</updated>
       <workItem from="1718118436146" duration="3357000" />
       <workItem from="1718127575327" duration="731000" />
-      <workItem from="1718196373261" duration="15110000" />
+      <workItem from="1718196373261" duration="15437000" />
+      <workItem from="1718228759394" duration="2262000" />
+      <workItem from="1718264315066" duration="2987000" />
     </task>
     <task id="LOCAL-00001" summary="without db">
       <option name="closed" value="true" />
@@ -215,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718207273546</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="minimum request">
+      <option name="closed" value="true" />
+      <created>1718223709088</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1718223709088</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +225,7 @@
     <MESSAGE value="not worked" />
     <MESSAGE value="base version" />
     <MESSAGE value="full working pharmacy" />
-    <option name="LAST_COMMIT_MESSAGE" value="full working pharmacy" />
+    <MESSAGE value="minimum request" />
+    <option name="LAST_COMMIT_MESSAGE" value="minimum request" />
   </component>
 </project>

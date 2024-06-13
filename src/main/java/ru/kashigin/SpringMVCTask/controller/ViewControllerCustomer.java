@@ -1,8 +1,10 @@
 package ru.kashigin.SpringMVCTask.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.kashigin.SpringMVCTask.model.Customer;
 import ru.kashigin.SpringMVCTask.service.CustomerService;
@@ -27,7 +29,10 @@ public class ViewControllerCustomer {
         return "addCustomer";
     }
     @PostMapping("/view/customers/add")
-    public String addCustomerSubmit(@ModelAttribute Customer customer, Model model){
+    public String addCustomerSubmit(@ModelAttribute @Valid Customer customer, BindingResult bindingResult,
+                                    Model model){
+        if (bindingResult.hasErrors())
+            return "addCustomer";
         customerService.createCustomer(customer);
         return "redirect:/view/customers";
     }
@@ -51,7 +56,10 @@ public class ViewControllerCustomer {
     }
 
     @PostMapping("/view/customers/edit/{id}")
-    public String editCustomerSubmit(@PathVariable("id") Long id, @ModelAttribute Customer customer){
+    public String editCustomerSubmit(@PathVariable("id") Long id, @ModelAttribute @Valid Customer customer,
+                                     BindingResult bindingResult){
+        if (bindingResult.hasErrors())
+            return "editCustomer";
         Customer existingCustomer = customerService.getCustomerById(id);
         if (customer == null)
             throw new RuntimeException("Customer not found");

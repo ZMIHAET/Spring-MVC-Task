@@ -9,10 +9,12 @@
     <div>
         <label for="name">Name:</label>
         <input type="text" id="name" th:field="*{name}" />
+        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
     </div>
     <div>
         <label for="email">Email:</label>
         <input type="text" id="email" th:field="*{email}" />
+        <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
     </div>
     <div>
         <input type="submit" value="Add customer"/>

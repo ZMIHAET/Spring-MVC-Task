@@ -1,8 +1,10 @@
 package ru.kashigin.SpringMVCTask.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.kashigin.SpringMVCTask.model.Pharmacy;
 import ru.kashigin.SpringMVCTask.service.PharmacyService;
@@ -29,7 +31,10 @@ public class ViewControllerPharmacy {
     }
 
     @PostMapping("/view/pharmacies/add")
-    public String addPharmacySubmit(@ModelAttribute Pharmacy pharmacy, Model model) {
+    public String addPharmacySubmit(@ModelAttribute @Valid Pharmacy pharmacy, BindingResult bindingResult,
+                                    Model model) {
+        if (bindingResult.hasErrors())
+            return "addPharmacy";
         pharmacyService.createPharmacy(pharmacy);
         return "redirect:/view/pharmacies";
     }
@@ -53,7 +58,11 @@ public class ViewControllerPharmacy {
     }
 
     @PostMapping("/view/pharmacies/edit/{id}")
-    public String editPharmacySubmit(@PathVariable("id") Long id, @ModelAttribute Pharmacy pharmacy){
+    public String editPharmacySubmit(@PathVariable("id") Long id,
+                                     @ModelAttribute @Valid Pharmacy pharmacy,
+                                     BindingResult bindingResult){
+        if (bindingResult.hasErrors())
+            return "editPharmacy";
         Pharmacy existingPharmacy = pharmacyService.getPharmacyById(id);
         if (existingPharmacy == null)
             throw new RuntimeException("Pharmacy not found");

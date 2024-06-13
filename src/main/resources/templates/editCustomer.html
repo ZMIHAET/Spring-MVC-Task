@@ -9,15 +9,17 @@
     <div>
         <label for="name">Name:</label>
         <input type="text" id="name" th:field="*{name}" />
+        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
     </div>
     <div>
         <label for="email">Email:</label>
         <input type="text" id="email" th:field="*{email}" />
+        <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
     </div>
     <div>
         <button type="Submit">Save</button>
+        <a th:href="@{/view/customers/{id}(id=${customer.id})}">Cancel</a>
     </div>
 </form>
-<a href="/view/customers">Cancel</a>
 </body>
 </html>

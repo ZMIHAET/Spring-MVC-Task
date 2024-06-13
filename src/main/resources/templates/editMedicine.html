@@ -9,19 +9,22 @@
     <div>
         <label for="name">Name:</label>
         <input type="text" id="name" th:field="*{name}" />
+        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
     </div>
     <div>
         <label for="price">Price:</label>
         <input type="text" id="price" th:field="*{price}" />
+        <div style="color:red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price error</div>
     </div>
     <div>
         <label for="stock">Stock:</label>
         <input type="text" id="stock" th:field="*{stock}" />
+        <div style="color:red" th:if="${#fields.hasErrors('stock')}" th:errors="*{stock}">Stock error</div>
     </div>
     <div>
         <button type="Submit">Save</button>
+        <a th:href="@{/view/medicines/{id}(id=${medicine.id})}">Cancel</a>
     </div>
 </form>
-<a href="/view/medicines">Cancel</a>
 </body>
 </html>

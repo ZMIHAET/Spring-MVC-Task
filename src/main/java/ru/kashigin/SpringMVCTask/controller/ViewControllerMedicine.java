@@ -1,8 +1,10 @@
 package ru.kashigin.SpringMVCTask.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.kashigin.SpringMVCTask.model.Medicine;
 import ru.kashigin.SpringMVCTask.service.MedicineService;
@@ -29,7 +31,10 @@ public class ViewControllerMedicine {
     }
 
     @PostMapping("/view/medicines/add")
-    public String addMedicineSubmit(@ModelAttribute Medicine medicine, Model model){
+    public String addMedicineSubmit(@ModelAttribute @Valid Medicine medicine, BindingResult bindingResult,
+                                    Model model){
+        if (bindingResult.hasErrors())
+            return "addMedicine";
         medicineService.createMedicine(medicine);
         return "redirect:/view/medicines";
     }
@@ -53,7 +58,11 @@ public class ViewControllerMedicine {
     }
 
     @PostMapping ("/view/medicines/edit/{id}")
-    public String editMedicineSubmit(@PathVariable("id") Long id, @ModelAttribute Medicine medicine){
+    public String editMedicineSubmit(@PathVariable("id") Long id,
+                                     @ModelAttribute @Valid Medicine medicine,
+                                     BindingResult bindingResult){
+        if (bindingResult.hasErrors())
+            return "editMedicine";
         Medicine existingMedicine = medicineService.getMedicineById(id);
         if (medicine == null)
             throw new RuntimeException("Medicine not found");

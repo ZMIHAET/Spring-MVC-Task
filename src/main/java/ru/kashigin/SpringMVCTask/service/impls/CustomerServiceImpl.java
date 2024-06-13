@@ -1,14 +1,15 @@
-package ru.kashigin.SpringMVCTask.service;
+package ru.kashigin.SpringMVCTask.service.impls;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.kashigin.SpringMVCTask.model.Customer;
 import ru.kashigin.SpringMVCTask.repository.CustomerRepository;
+import ru.kashigin.SpringMVCTask.service.CustomerService;
 
 import java.util.List;
 
 @Service
-public class CustomerServiceImpl implements CustomerService{
+public class CustomerServiceImpl implements CustomerService {
     private final CustomerRepository repository;
 
     public CustomerServiceImpl(CustomerRepository repository) {

@@ -1,14 +1,15 @@
-package ru.kashigin.SpringMVCTask.service;
+package ru.kashigin.SpringMVCTask.service.impls;
 
 import org.springframework.stereotype.Service;
 import ru.kashigin.SpringMVCTask.dto.PharmacyDTO;
 import ru.kashigin.SpringMVCTask.model.Pharmacy;
 import ru.kashigin.SpringMVCTask.repository.PharmacyRepository;
+import ru.kashigin.SpringMVCTask.service.PharmacyService;
 
 import java.util.List;
 
 @Service
-public class PharmacyServiceImpl implements PharmacyService{
+public class PharmacyServiceImpl implements PharmacyService {
     private final PharmacyRepository repository;
 
     public PharmacyServiceImpl(PharmacyRepository repository) {

@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64720a6d-0ec9-4321-8203-8ac550034a07" name="Changes" comment="Validation has been added">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/controller/ViewControllerPharmacy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/controller/ViewControllerPharmacy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/service/PharmacyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/service/PharmacyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/service/PharmacyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kashigin/SpringMVCTask/service/PharmacyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addPharmacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pharma/addPharmacy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editPharmacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pharma/editPharmacy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pharmacies.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pharma/pharmacies.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pharmacyDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pharma/pharmacyDetails.html" afterDir="false" />
+    <list default="true" id="64720a6d-0ec9-4321-8203-8ac550034a07" name="Changes" comment="Folders for HTMLs files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +159,8 @@
       <workItem from="1718127575327" duration="731000" />
       <workItem from="1718196373261" duration="15437000" />
       <workItem from="1718228759394" duration="2262000" />
-      <workItem from="1718264315066" duration="3898000" />
+      <workItem from="1718264315066" duration="4271000" />
+      <workItem from="1718268614294" duration="602000" />
     </task>
     <task id="LOCAL-00001" summary="without db">
       <option name="closed" value="true" />
@@ -215,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718267568068</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Folders for HTMLs files">
+      <option name="closed" value="true" />
+      <created>1718268588748</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1718268588748</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +231,7 @@
     <MESSAGE value="full working pharmacy" />
     <MESSAGE value="minimum request" />
     <MESSAGE value="Validation has been added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Validation has been added" />
+    <MESSAGE value="Folders for HTMLs files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Folders for HTMLs files" />
   </component>
 </project>

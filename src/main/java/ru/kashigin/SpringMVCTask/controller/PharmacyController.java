@@ -1,7 +1,7 @@
 package ru.kashigin.SpringMVCTask.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import ru.kashigin.SpringMVCTask.DTO.PharmacyDTO;
+import ru.kashigin.SpringMVCTask.dto.PharmacyDto;
 import ru.kashigin.SpringMVCTask.model.Pharmacy;
 
 import org.springframework.web.bind.annotation.*;
@@ -21,27 +21,27 @@ public class PharmacyController {
     }
 
     @GetMapping
-    public List<PharmacyDTO> getAllPharmacies() {
+    public List<PharmacyDto> getAllPharmacies() {
         return pharmacyService.getAllPharmacies().stream()
-                .map(this::convertToDTO)
+                .map(this::convertToDto)
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/{id}")
-    public PharmacyDTO getPharmacyById(@PathVariable Long id) {
-        return convertToDTO(pharmacyService.getPharmacyById(id));
+    public PharmacyDto getPharmacyById(@PathVariable Long id) {
+        return convertToDto(pharmacyService.getPharmacyById(id));
     }
 
     @PostMapping
-    public PharmacyDTO createPharmacy(@RequestBody PharmacyDTO pharmacyDTO) {
-        Pharmacy pharmacy = convertToEntity(pharmacyDTO);
-        return convertToDTO(pharmacyService.createPharmacy(pharmacy));
+    public PharmacyDto createPharmacy(@RequestBody PharmacyDto pharmacyDto) {
+        Pharmacy pharmacy = convertToEntity(pharmacyDto);
+        return convertToDto(pharmacyService.createPharmacy(pharmacy));
     }
 
     @PutMapping("/{id}")
-    public PharmacyDTO updatePharmacy(@PathVariable Long id, @RequestBody PharmacyDTO pharmacyDTO) {
-        Pharmacy pharmacy = convertToEntity(pharmacyDTO);
-        return convertToDTO(pharmacyService.updatePharmacy(id, pharmacy));
+    public PharmacyDto updatePharmacy(@PathVariable Long id, @RequestBody PharmacyDto pharmacyDto) {
+        Pharmacy pharmacy = convertToEntity(pharmacyDto);
+        return convertToDto(pharmacyService.updatePharmacy(id, pharmacy));
     }
 
     @DeleteMapping("/{id}")
@@ -49,19 +49,19 @@ public class PharmacyController {
         pharmacyService.deletePharmacy(id);
     }
 
-    private PharmacyDTO convertToDTO(Pharmacy pharmacy) {
-        PharmacyDTO DTO = new PharmacyDTO();
-        DTO.setId(pharmacy.getId());
-        DTO.setName(pharmacy.getName());
-        DTO.setAddress(pharmacy.getAddress());
-        return DTO;
+    private PharmacyDto convertToDto(Pharmacy pharmacy) {
+        PharmacyDto Dto = new PharmacyDto();
+        Dto.setId(pharmacy.getId());
+        Dto.setName(pharmacy.getName());
+        Dto.setAddress(pharmacy.getAddress());
+        return Dto;
     }
 
-    private Pharmacy convertToEntity(PharmacyDTO pharmacyDTO) {
+    private Pharmacy convertToEntity(PharmacyDto pharmacyDto) {
         Pharmacy pharmacy = new Pharmacy();
-        pharmacy.setId(pharmacyDTO.getId());
-        pharmacy.setName(pharmacyDTO.getName());
-        pharmacy.setAddress(pharmacyDTO.getAddress());
+        pharmacy.setId(pharmacyDto.getId());
+        pharmacy.setName(pharmacyDto.getName());
+        pharmacy.setAddress(pharmacyDto.getAddress());
         return pharmacy;
     }
 }

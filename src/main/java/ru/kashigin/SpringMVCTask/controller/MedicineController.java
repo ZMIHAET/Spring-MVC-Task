@@ -1,7 +1,7 @@
 package ru.kashigin.SpringMVCTask.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import ru.kashigin.SpringMVCTask.DTO.MedicineDTO;
+import ru.kashigin.SpringMVCTask.dto.MedicineDto;
 import ru.kashigin.SpringMVCTask.model.Medicine;
 
 import org.springframework.web.bind.annotation.*;
@@ -21,27 +21,27 @@ public class MedicineController {
     }
 
     @GetMapping
-    public List<MedicineDTO> getAllMedicines() {
+    public List<MedicineDto> getAllMedicines() {
         return medicineService.getAllMedicines().stream()
-                .map(this::convertToDTO)
+                .map(this::convertToDto)
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/{id}")
-    public MedicineDTO getMedicineById(@PathVariable Long id) {
-        return convertToDTO(medicineService.getMedicineById(id));
+    public MedicineDto getMedicineById(@PathVariable Long id) {
+        return convertToDto(medicineService.getMedicineById(id));
     }
 
     @PostMapping
-    public MedicineDTO createMedicine(@RequestBody MedicineDTO medicineDTO) {
-        Medicine medicine = convertToEntity(medicineDTO);
-        return convertToDTO(medicineService.createMedicine(medicine));
+    public MedicineDto createMedicine(@RequestBody MedicineDto medicineDto) {
+        Medicine medicine = convertToEntity(medicineDto);
+        return convertToDto(medicineService.createMedicine(medicine));
     }
 
     @PutMapping("/{id}")
-    public MedicineDTO updateMedicine(@PathVariable Long id, @RequestBody MedicineDTO medicineDTO) {
-        Medicine medicine = convertToEntity(medicineDTO);
-        return convertToDTO(medicineService.updateMedicine(id, medicine));
+    public MedicineDto updateMedicine(@PathVariable Long id, @RequestBody MedicineDto medicineDto) {
+        Medicine medicine = convertToEntity(medicineDto);
+        return convertToDto(medicineService.updateMedicine(id, medicine));
     }
 
     @DeleteMapping("/{id}")
@@ -49,21 +49,21 @@ public class MedicineController {
         medicineService.deleteMedicine(id);
     }
 
-    private MedicineDTO convertToDTO(Medicine medicine) {
-        MedicineDTO DTO = new MedicineDTO();
-        DTO.setId(medicine.getId());
-        DTO.setName(medicine.getName());
-        DTO.setPrice(medicine.getPrice());
-        DTO.setStock(medicine.getStock());
-        return DTO;
+    private MedicineDto convertToDto(Medicine medicine) {
+        MedicineDto Dto = new MedicineDto();
+        Dto.setId(medicine.getId());
+        Dto.setName(medicine.getName());
+        Dto.setPrice(medicine.getPrice());
+        Dto.setStock(medicine.getStock());
+        return Dto;
     }
 
-    private Medicine convertToEntity(MedicineDTO medicineDTO) {
+    private Medicine convertToEntity(MedicineDto medicineDto) {
         Medicine medicine = new Medicine();
-        medicine.setId(medicineDTO.getId());
-        medicine.setName(medicineDTO.getName());
-        medicine.setPrice(medicineDTO.getPrice());
-        medicine.setStock(medicineDTO.getStock());
+        medicine.setId(medicineDto.getId());
+        medicine.setName(medicineDto.getName());
+        medicine.setPrice(medicineDto.getPrice());
+        medicine.setStock(medicineDto.getStock());
         return medicine;
     }
 }

@@ -2,7 +2,7 @@ package ru.kashigin.SpringMVCTask.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ru.kashigin.SpringMVCTask.DTO.CustomerDTO;
+import ru.kashigin.SpringMVCTask.dto.CustomerDto;
 import ru.kashigin.SpringMVCTask.model.Customer;
 import ru.kashigin.SpringMVCTask.service.CustomerService;
 
@@ -20,27 +20,27 @@ public class CustomerController {
     }
 
     @GetMapping
-    public List<CustomerDTO> getAllCustomers() {
+    public List<CustomerDto> getAllCustomers() {
         return customerService.getAllCustomers().stream()
-                .map(this::convertToDTO)
+                .map(this::convertToDto)
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/{id}")
-    public CustomerDTO getCustomerById(@PathVariable Long id) {
-        return convertToDTO(customerService.getCustomerById(id));
+    public CustomerDto getCustomerById(@PathVariable Long id) {
+        return convertToDto(customerService.getCustomerById(id));
     }
 
     @PostMapping
-    public CustomerDTO createCustomer(@RequestBody CustomerDTO customerDTO) {
-        Customer customer = convertToEntity(customerDTO);
-        return convertToDTO(customerService.createCustomer(customer));
+    public CustomerDto createCustomer(@RequestBody CustomerDto customerDto) {
+        Customer customer = convertToEntity(customerDto);
+        return convertToDto(customerService.createCustomer(customer));
     }
 
     @PutMapping("/{id}")
-    public CustomerDTO updateCustomer(@PathVariable Long id, @RequestBody CustomerDTO customerDTO) {
-        Customer customer = convertToEntity(customerDTO);
-        return convertToDTO(customerService.updateCustomer(id, customer));
+    public CustomerDto updateCustomer(@PathVariable Long id, @RequestBody CustomerDto customerDto) {
+        Customer customer = convertToEntity(customerDto);
+        return convertToDto(customerService.updateCustomer(id, customer));
     }
 
     @DeleteMapping("/{id}")
@@ -48,19 +48,19 @@ public class CustomerController {
         customerService.deleteCustomer(id);
     }
 
-    private CustomerDTO convertToDTO(Customer customer) {
-        CustomerDTO DTO = new CustomerDTO();
-        DTO.setId(customer.getId());
-        DTO.setName(customer.getName());
-        DTO.setEmail(customer.getEmail());
-        return DTO;
+    private CustomerDto convertToDto(Customer customer) {
+        CustomerDto Dto = new CustomerDto();
+        Dto.setId(customer.getId());
+        Dto.setName(customer.getName());
+        Dto.setEmail(customer.getEmail());
+        return Dto;
     }
 
-    private Customer convertToEntity(CustomerDTO customerDTO) {
+    private Customer convertToEntity(CustomerDto customerDto) {
         Customer customer = new Customer();
-        customer.setId(customerDTO.getId());
-        customer.setName(customerDTO.getName());
-        customer.setEmail(customerDTO.getEmail());
+        customer.setId(customerDto.getId());
+        customer.setName(customerDto.getName());
+        customer.setEmail(customerDto.getEmail());
         return customer;
     }
 }

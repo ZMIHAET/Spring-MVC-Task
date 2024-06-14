@@ -1,7 +1,6 @@
 package ru.kashigin.SpringMVCTask.service.impls;
 
 import org.springframework.stereotype.Service;
-import ru.kashigin.SpringMVCTask.dto.PharmacyDTO;
 import ru.kashigin.SpringMVCTask.model.Pharmacy;
 import ru.kashigin.SpringMVCTask.repository.PharmacyRepository;
 import ru.kashigin.SpringMVCTask.service.PharmacyService;
@@ -17,7 +16,7 @@ public class PharmacyServiceImpl implements PharmacyService {
     }
 
     @Override
-    public List<Pharmacy> getAllPharmacies(){
+    public List<Pharmacy> getAllPharmacies() {
         return repository.findAll();
     }
 
@@ -33,7 +32,7 @@ public class PharmacyServiceImpl implements PharmacyService {
 
     @Override
     public Pharmacy updatePharmacy(Long id, Pharmacy pharmacy) {
-        if (repository.findById(id).isPresent()){
+        if (repository.findById(id).isPresent()) {
             repository.deleteById(id);
             return repository.save(pharmacy);
         }

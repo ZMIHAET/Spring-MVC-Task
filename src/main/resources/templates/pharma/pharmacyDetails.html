@@ -10,12 +10,10 @@
 <p><a th:href="@{/view/pharmacies/edit/{id}(id=${pharmacy.id})}">Edit</a></p>
 <p>
 <form th:action="@{/view/pharmacies/{id}(id=${pharmacy.id})}" method="post">
-    <input type="hidden" name="_method" value="delete" />
+    <input type="hidden" name="_method" value="delete"/>
     <input type="submit" value="Delete"/>
 </form>
 </p>
-
-
 <a href="/view/pharmacies">Back to list</a>
 </body>
 </html>

@@ -19,20 +19,20 @@ public class ViewControllerMedicine {
     }
 
     @GetMapping("/view/medicines")
-    public String viewMedicines(Model model){
+    public String viewMedicines(Model model) {
         model.addAttribute("medicines", medicineService.getAllMedicines());
         return "/medici/medicines";
     }
 
     @GetMapping("/view/medicines/add")
-    public String addMedicineForm(Model model){
+    public String addMedicineForm(Model model) {
         model.addAttribute("medicine", new Medicine());
         return "/medici/addMedicine";
     }
 
     @PostMapping("/view/medicines/add")
     public String addMedicineSubmit(@ModelAttribute @Valid Medicine medicine, BindingResult bindingResult,
-                                    Model model){
+                                    Model model) {
         if (bindingResult.hasErrors())
             return "/medici/addMedicine";
         medicineService.createMedicine(medicine);
@@ -40,7 +40,7 @@ public class ViewControllerMedicine {
     }
 
     @GetMapping("/view/medicines/{id}")
-    public String viewMedicine(@PathVariable("id") Long id, Model model){
+    public String viewMedicine(@PathVariable("id") Long id, Model model) {
         Medicine medicine = medicineService.getMedicineById(id);
         if (medicine == null)
             throw new RuntimeException("Medicine not found");
@@ -49,7 +49,7 @@ public class ViewControllerMedicine {
     }
 
     @GetMapping("/view/medicines/edit/{id}")
-    public String editMedicineForm(@PathVariable("id") Long id, Model model){
+    public String editMedicineForm(@PathVariable("id") Long id, Model model) {
         Medicine medicine = medicineService.getMedicineById(id);
         if (medicine == null)
             throw new RuntimeException("Medicine not found");
@@ -57,10 +57,10 @@ public class ViewControllerMedicine {
         return "/medici/editMedicine";
     }
 
-    @PostMapping ("/view/medicines/edit/{id}")
+    @PostMapping("/view/medicines/edit/{id}")
     public String editMedicineSubmit(@PathVariable("id") Long id,
                                      @ModelAttribute @Valid Medicine medicine,
-                                     BindingResult bindingResult){
+                                     BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             return "/medici/editMedicine";
         Medicine existingMedicine = medicineService.getMedicineById(id);
@@ -74,8 +74,8 @@ public class ViewControllerMedicine {
     }
 
     @PostMapping("/view/medicines/{id}")
-    public String deleteMedicine(@PathVariable("id") Long id, @RequestParam("_method") String method){
-        if("delete".equalsIgnoreCase(method))
+    public String deleteMedicine(@PathVariable("id") Long id, @RequestParam("_method") String method) {
+        if ("delete".equalsIgnoreCase(method))
             medicineService.deleteMedicine(id);
         return "redirect:/view/medicines";
     }

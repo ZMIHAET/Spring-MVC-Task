@@ -10,7 +10,7 @@
 <p><a th:href="@{/view/customers/edit/{id}(id=${customer.id})}">Edit</a></p>
 <p>
 <form th:action="@{/view/customers/{id}(id=${customer.id})}" method="post">
-    <input type="hidden" name="_method" value="delete" />
+    <input type="hidden" name="_method" value="delete"/>
     <input type="submit" value="Delete"/>
 </form>
 </p>

@@ -26,5 +26,4 @@ public class Pharmacy {
     @NotEmpty(message = "Address should not be empty")
     @Size(min = 2, max = 100, message = "Address should be between 2 and 100 characters")
     private String address;
-
 }

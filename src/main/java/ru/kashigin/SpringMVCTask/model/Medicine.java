@@ -23,5 +23,4 @@ public class Medicine {
     private double price;
     @PositiveOrZero(message = "Stock should not be less than zero")
     private int stock;
-
 }

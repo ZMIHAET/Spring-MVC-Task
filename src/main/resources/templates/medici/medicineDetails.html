@@ -11,7 +11,7 @@
 <p><a th:href="@{/view/medicines/edit/{id}(id=${medicine.id})}">Edit</a></p>
 <p>
 <form th:action="@{/view/medicines/{id}(id=${medicine.id})}" method="post">
-    <input type="hidden" name="_method" value="delete" />
+    <input type="hidden" name="_method" value="delete"/>
     <input type="submit" value="Delete"/>
 </form>
 </p>

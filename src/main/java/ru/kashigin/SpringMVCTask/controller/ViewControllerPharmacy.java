@@ -14,12 +14,12 @@ public class ViewControllerPharmacy {
     private final PharmacyService pharmacyService;
 
     @Autowired
-    public ViewControllerPharmacy(PharmacyService pharmacyService){
+    public ViewControllerPharmacy(PharmacyService pharmacyService) {
         this.pharmacyService = pharmacyService;
     }
 
     @GetMapping("/view/pharmacies")
-    public String viewPharmacies(Model model){
+    public String viewPharmacies(Model model) {
         model.addAttribute("pharmacies", pharmacyService.getAllPharmacies());
         return "/pharma/pharmacies";
     }
@@ -40,7 +40,7 @@ public class ViewControllerPharmacy {
     }
 
     @GetMapping("/view/pharmacies/{id}")
-    public String viewPharmacy(@PathVariable("id") Long id, Model model){
+    public String viewPharmacy(@PathVariable("id") Long id, Model model) {
         Pharmacy pharmacy = pharmacyService.getPharmacyById(id);
         if (pharmacy == null)
             throw new RuntimeException("Pharmacy not found");
@@ -49,7 +49,7 @@ public class ViewControllerPharmacy {
     }
 
     @GetMapping("/view/pharmacies/edit/{id}")
-    public String editPharmacyForm(@PathVariable("id") Long id, Model model){
+    public String editPharmacyForm(@PathVariable("id") Long id, Model model) {
         Pharmacy pharmacy = pharmacyService.getPharmacyById(id);
         if (pharmacy == null)
             throw new RuntimeException("Pharmacy not found");
@@ -60,7 +60,7 @@ public class ViewControllerPharmacy {
     @PostMapping("/view/pharmacies/edit/{id}")
     public String editPharmacySubmit(@PathVariable("id") Long id,
                                      @ModelAttribute @Valid Pharmacy pharmacy,
-                                     BindingResult bindingResult){
+                                     BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             return "/pharma/editPharmacy";
         Pharmacy existingPharmacy = pharmacyService.getPharmacyById(id);
@@ -73,8 +73,8 @@ public class ViewControllerPharmacy {
     }
 
     @PostMapping("/view/pharmacies/{id}")
-    public String deletePharmacy(@PathVariable("id") Long id, @RequestParam("_method") String method){
-        if("delete".equalsIgnoreCase(method))
+    public String deletePharmacy(@PathVariable("id") Long id, @RequestParam("_method") String method) {
+        if ("delete".equalsIgnoreCase(method))
             pharmacyService.deletePharmacy(id);
         return "redirect:/view/pharmacies";
     }

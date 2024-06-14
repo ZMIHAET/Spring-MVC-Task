@@ -11,6 +11,7 @@ import java.util.List;
 @Service
 public class MedicineServiceImpl implements MedicineService {
     private final MedicineRepository repository;
+
     public MedicineServiceImpl(MedicineRepository repository) {
         this.repository = repository;
     }
@@ -32,7 +33,7 @@ public class MedicineServiceImpl implements MedicineService {
 
     @Override
     public Medicine updateMedicine(Long id, Medicine medicine) {
-        if (repository.findById(id).isPresent()){
+        if (repository.findById(id).isPresent()) {
             repository.deleteById(id);
             return repository.save(medicine);
         }

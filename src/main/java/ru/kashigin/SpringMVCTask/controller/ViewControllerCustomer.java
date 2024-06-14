@@ -19,18 +19,20 @@ public class ViewControllerCustomer {
     }
 
     @GetMapping("/view/customers")
-    public String viewCustomers(Model model){
+    public String viewCustomers(Model model) {
         model.addAttribute("customers", customerService.getAllCustomers());
         return "/custom/customers";
     }
+
     @GetMapping("/view/customers/add")
-    public String addCustomerForm(Model model){
+    public String addCustomerForm(Model model) {
         model.addAttribute("customer", new Customer());
         return "/custom/addCustomer";
     }
+
     @PostMapping("/view/customers/add")
     public String addCustomerSubmit(@ModelAttribute @Valid Customer customer, BindingResult bindingResult,
-                                    Model model){
+                                    Model model) {
         if (bindingResult.hasErrors())
             return "/custom/addCustomer";
         customerService.createCustomer(customer);
@@ -38,7 +40,7 @@ public class ViewControllerCustomer {
     }
 
     @GetMapping("/view/customers/{id}")
-    public String viewCustomer(@PathVariable("id") Long id, Model model){
+    public String viewCustomer(@PathVariable("id") Long id, Model model) {
         Customer customer = customerService.getCustomerById(id);
         if (customer == null)
             throw new RuntimeException("Customer not found");
@@ -47,7 +49,7 @@ public class ViewControllerCustomer {
     }
 
     @GetMapping("/view/customers/edit/{id}")
-    public String editCustomerForm(@PathVariable("id") Long id, Model model){
+    public String editCustomerForm(@PathVariable("id") Long id, Model model) {
         Customer customer = customerService.getCustomerById(id);
         if (customer == null)
             throw new RuntimeException("Customer not found");
@@ -57,7 +59,7 @@ public class ViewControllerCustomer {
 
     @PostMapping("/view/customers/edit/{id}")
     public String editCustomerSubmit(@PathVariable("id") Long id, @ModelAttribute @Valid Customer customer,
-                                     BindingResult bindingResult){
+                                     BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             return "/custom/editCustomer";
         Customer existingCustomer = customerService.getCustomerById(id);
@@ -70,8 +72,8 @@ public class ViewControllerCustomer {
     }
 
     @PostMapping("/view/customers/{id}")
-    public String deleteCustomer(@PathVariable("id") Long id, @RequestParam("_method") String method){
-        if("delete".equalsIgnoreCase(method))
+    public String deleteCustomer(@PathVariable("id") Long id, @RequestParam("_method") String method) {
+        if ("delete".equalsIgnoreCase(method))
             customerService.deleteCustomer(id);
         return "redirect:/view/customers";
     }

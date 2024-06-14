@@ -33,7 +33,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer updateCustomer(Long id, Customer customer) {
-        if (repository.findById(id).isPresent()){
+        if (repository.findById(id).isPresent()) {
             repository.deleteById(id);
             return repository.save(customer);
         }
